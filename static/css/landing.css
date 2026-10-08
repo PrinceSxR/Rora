@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------ */
+/* Landing page — hero                                                 */
+/* ------------------------------------------------------------------ */
+
+.landing-hero {
+    background: var(--paper-card);
+    padding: 4.5rem 1.5rem 4.5rem;
+}
+
+.landing-hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #e8f5ee;
+    color: #2e7553;
+    border: 1px solid #b9dcc8;
+    border-radius: 999px;
+    padding: 0.45rem 1.35rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 2.25rem;
+}
+
+.hero-pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3f9a6c;
+}
+
+.hero-heading {
+    font-family: var(--font-body);
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: #111111;
+    margin-bottom: 1.75rem;
+}
+
+.hero-heading-accent { color: #4a9a72; }
+
+.hero-lead {
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    line-height: 1.7;
+    color: var(--ink-muted);
+    max-width: 640px;
+    margin: 0 auto 3rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #111111;
+    color: #ffffff;
+    padding: 1rem 2.1rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover { background: var(--accent); }
+
+/* Dashboard preview -------------------------------------------------- */
+
+.preview-window {
+    max-width: 880px;
+    margin: 4rem auto 0;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.preview-dots {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+}
+
+.preview-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.preview-dot-red    { background: #e59a97; }
+.preview-dot-yellow { background: #f2c56f; }
+.preview-dot-green  { background: #a6dcc4; }
+
+.preview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem 1.3rem;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #8a8a8a;
+    margin-bottom: 0.4rem;
+}
+
+.stat-value {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #111111;
+    margin-bottom: 0.25rem;
+}
+
+.stat-meta {
+    font-size: 0.95rem;
+    color: var(--ink-faint);
+}
+
+.stat-meta-up   { color: #d14a3b; }
+.stat-meta-good { color: #3d9a6a; }
+
+.preview-bars {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.bar-row {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bar-label {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    text-align: center;
+}
+
+.bar-track {
+    height: 10px;
+    background: #efede6;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.bar-fill-food   { background: #e5a33f; }
+.bar-fill-travel { background: #4b86d6; }
+.bar-fill-bills  { background: #7e72d2; }
+
+/* Responsive --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .landing-hero { padding: 3rem 1rem; }
+    .hero-pill { font-size: 0.9rem; padding: 0.4rem 1rem; }
+    .hero-btn { font-size: 1rem; padding: 0.85rem 1.6rem; }
+    .preview-window { padding: 1rem; margin-top: 3rem; }
+    .preview-stats { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 3.75rem 1fr; gap: 0.75rem; }
+}
