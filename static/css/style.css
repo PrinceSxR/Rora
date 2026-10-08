@@ -530,6 +530,11 @@ a { color: inherit; text-decoration: none; }
 
 .legal-card li { margin-bottom: 0.4rem; }
 
+.legal-card strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
 /* ------------------------------------------------------------------ */
 /* Footer                                                              */
 /* ------------------------------------------------------------------ */
