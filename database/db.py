@@ -39,6 +39,17 @@ def get_user_by_email(email):
         conn.close()
 
 
+def get_user_by_id(user_id):
+    conn = get_db()
+    try:
+        return conn.execute(
+            "SELECT id, name, email, created_at FROM users WHERE id = ?",
+            (user_id,),
+        ).fetchone()
+    finally:
+        conn.close()
+
+
 def create_user(name, email, password):
     """Insert a new user and return its id, or None if the email is taken."""
     conn = get_db()
