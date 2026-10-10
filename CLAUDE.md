@@ -65,7 +65,8 @@ GET /	Implemented — renders landing.html
 GET /register	Implemented — renders register.html
 POST /register	Implemented — Step 2: validates, creates user, flashes success, redirects to /login
 GET /login	Implemented — renders login.html
-GET /logout	Stub — Step 3
+POST /login	Implemented — Step 3: validates credentials, sets session, flashes welcome, redirects to /profile
+GET /logout	Implemented — Step 3: clears session, flashes, redirects to /login
 GET /profile	Stub — Step 4
 GET /expenses/add	Stub — Step 7
 GET /expenses/<id>/edit	Stub — Step 8
