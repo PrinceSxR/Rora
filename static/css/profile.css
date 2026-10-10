@@ -1,0 +1,266 @@
+/* ------------------------------------------------------------------ */
+/* Profile page                                                        */
+/* ------------------------------------------------------------------ */
+
+.profile-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.profile-page > .auth-success,
+.profile-page > .auth-error { margin-bottom: 0; }
+
+.profile-card,
+.stat-card,
+.profile-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+/* ---- User card ---------------------------------------------------- */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.75rem;
+}
+
+.profile-avatar {
+    flex: 0 0 auto;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+}
+
+.profile-identity { min-width: 0; }
+
+.profile-name {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.15;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+}
+
+.profile-email {
+    color: var(--ink-muted);
+    margin-top: 0.25rem;
+    overflow-wrap: anywhere;
+}
+
+.profile-since {
+    color: var(--ink-faint);
+    font-size: 0.875rem;
+    margin-top: 0.35rem;
+}
+
+/* ---- Stats -------------------------------------------------------- */
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+/* ---- Panels ------------------------------------------------------- */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.profile-panel { padding: 1.5rem; }
+
+.panel-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.empty-state {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+}
+
+/* ---- Transactions table ------------------------------------------ */
+
+.table-scroll { overflow-x: auto; }
+
+.txn-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.txn-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    padding: 0 0.75rem 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.txn-table td {
+    padding: 0.7rem 0.75rem 0.7rem 0;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--ink-soft);
+    vertical-align: middle;
+}
+
+.txn-table tbody tr:last-child td { border-bottom: none; }
+
+.txn-table .num {
+    text-align: right;
+    padding-right: 0;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--ink);
+}
+
+.txn-date {
+    white-space: nowrap;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- Category colours -------------------------------------------- */
+
+.cat-food { color: var(--cat-food); }
+.cat-bills { color: var(--cat-bills); }
+.cat-transport { color: var(--cat-transport); }
+.cat-entertainment { color: var(--cat-entertainment); }
+.cat-health { color: var(--cat-health); }
+.cat-shopping { color: var(--cat-shopping); }
+.cat-other { color: var(--cat-other); }
+
+.cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: var(--paper-warm);
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.cat-pill::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ---- Category breakdown ------------------------------------------ */
+
+.cat-list {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.cat-row-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.cat-name {
+    flex: 1;
+    min-width: 0;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.cat-amount {
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+}
+
+.cat-percent {
+    min-width: 2.75rem;
+    text-align: right;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.cat-track {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.cat-bar {
+    height: 100%;
+    border-radius: 999px;
+    background: currentColor;
+}
+
+/* ---- Responsive --------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .profile-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .profile-page { padding: 1.5rem 1rem 2rem; gap: 1rem; }
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1.25rem;
+    }
+    .profile-name { font-size: 1.6rem; }
+    .profile-stats { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+    .profile-panel { padding: 1.25rem 1rem; }
+    .txn-table { font-size: 0.85rem; }
+    .txn-table th:first-child,
+    .txn-table .txn-date { display: none; }
+}
